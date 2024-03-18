@@ -24,12 +24,17 @@ defmodule Formex.Validator.Vex.Mixfile do
   defp deps do
     deps = [
       {:vex, "~> 0.6.0"},
-      {:ex_doc, ">= 0.0.0", only: :dev},
-      {:credo, "~> 0.9", only: [:dev, :test], runtime: false}
+      {:ex_doc, "~> 0.23.0", only: :dev},
+      {:credo, "~> 1.0", only: [:dev, :test], runtime: false}
     ]
 
     if !System.get_env("FORMEX_DEV") do
-      deps ++ [{:formex, ">= 0.5.0 and < 0.7.0"}]
+      deps ++
+        [
+          {:formex,
+           git: "https://github.com/365assistance/formex",
+           ref: "e06be7f67b8fc563c6a9d101ea773381b64594aa"}
+        ]
     else
       deps
     end
