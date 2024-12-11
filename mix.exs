@@ -23,7 +23,7 @@ defmodule Formex.Validator.Vex.Mixfile do
 
   defp deps do
     deps = [
-      {:vex, "~> 0.6.0"},
+      {:vex, "~> 0.6"},
       {:ex_doc, "~> 0.23.0", only: :dev},
       {:credo, "~> 1.0", only: [:dev, :test], runtime: false}
     ]
